@@ -1,7 +1,7 @@
 # 1. The standard Laplace distribution has density 
-# f(x)=exp(-|x|)/2, x: ½Ç¼ö ÀüÃ¼. 
+# f(x)=exp(-|x|)/2, x: ì‹¤ìˆ˜ ì „ì²´. 
 # Use the inverse transform method to generate a random sample of size 1000 from this distribution.
-# »ý¼ºÇÑ °Í(x)°ú ¾Æ·¡ »ùÇÃ(y)°ú ºñ±³ÇØ¼­ ºñ½ÁÇÏ°Ô ³ª¿À¸é µË´Ï´Ù.
+# ìƒì„±í•œ ê²ƒ(x)ê³¼ ì•„ëž˜ ìƒ˜í”Œ(y)ê³¼ ë¹„êµí•´ì„œ ë¹„ìŠ·í•˜ê²Œ ë‚˜ì˜¤ë©´ ë©ë‹ˆë‹¤.
 
 # Inf>=x1>= 0
 u1<-runif(5000,1/2,1)
@@ -15,11 +15,11 @@ x<-x1+x2
 install.packages('ExtDist')
 library(ExtDist)
 y <- rLaplace(1000)
-plot(density(x),col="blue",main = "x¿Í y ºñ±³")
+plot(density(x),col="blue",main = "xì™€ y ë¹„êµ")
 lines(density(y),col='red')
 legend("topright", c("x","y" ),col=c("blue","red"),pch = 15)
 
-# ¶Ç ´Ù¸¥ ¹æ¹ý
+# ë˜ ë‹¤ë¥¸ ë°©ë²•
 y<-rLaplace(1000)
 plot(density(y))
 
@@ -41,7 +41,7 @@ lines(density(y), col="red")
 # 2. Generate a random sample(x) of size 1000 from a normal location mixture.
 # The components of the mixture have N(0,1) and N(3,1) distributions with mixing probabilities p1 and p2=1-p1.
 # p1=0.75
-# ¾à°£ÀÇ ½ÖºÀÇü density ¸¦ °®´Â °ÍÀ» È®ÀÎÇÏ±â À§ÇØ ¾Æ·¡ ±×¸²À» ±×¸®¸é µË´Ï´Ù.
+# ì•½ê°„ì˜ ìŒë´‰í˜• density ë¥¼ ê°–ëŠ” ê²ƒì„ í™•ì¸í•˜ê¸° ìœ„í•´ ì•„ëž˜ ê·¸ë¦¼ì„ ê·¸ë¦¬ë©´ ë©ë‹ˆë‹¤.
 # plot(density(x))
 n=1000
 p1=0.75;p2=1-p1
@@ -51,7 +51,7 @@ x2<-rnorm(1000,mean=3,sd=1)
 x<-(1-s)*x1+s*x2
 plot(density(x))
 
-# ´Ù¸¥ ¹æ¹ý 
+# ë‹¤ë¥¸ ë°©ë²• 
 n<-1000
 p<-c(0.75,0.25)
 
